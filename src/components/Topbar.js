@@ -23,27 +23,28 @@ function TopBar() {
 
   return (
     <div style={styles}>
-      <h1 style={{ fontSize: '1.5rem', margin: 0 }}>Flujo RH</h1>
+      <h1 style={{ fontSize: '1.5rem', margin: 0 }}> IMPRESORAS SHARP GO</h1>
       <nav>
         <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex' }}>
-          <li style={{ marginRight: '20px' }}>
-            <a href="#" style={linkStyles} activeStyle={activeLinkStyles}>
-              Inicio
-            </a>
-          </li>
-          <li style={{ marginRight: '20px' }}>
-            <a href="#" style={linkStyles} activeStyle={activeLinkStyles}>
-              Login
-            </a>
-          </li>
-          <li style={{ marginRight: '20px' }}>
-            <a href="#" style={linkStyles} activeStyle={activeLinkStyles}>
-              Calendario
-            </a>
-          </li>
+          <NavItem path="/" text="Inicio" styles={linkStyles} activeStyles={activeLinkStyles} />
+          <NavItem path="/about" text="Crear" styles={linkStyles} activeStyles={activeLinkStyles} />
+          <NavItem path="/contact" text="Contacto" styles={linkStyles} activeStyles={activeLinkStyles} />
         </ul>
       </nav>
     </div>
+  );
+}
+
+function NavItem(props) {
+  const { path, text, styles, activeStyles } = props;
+  const isActive = window.location.pathname === path;
+
+  return (
+    <li style={{ marginRight: '20px' }}>
+      <a href={path} style={styles} activeStyle={activeStyles}>
+        {text}
+      </a>
+    </li>
   );
 }
 
