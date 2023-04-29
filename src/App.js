@@ -21,9 +21,9 @@ function App({ signOut }) {
           <View className="App">
             <Card>
               
-              <Heading level={1}>We now have Auth!</Heading>
+              <Heading level={1}> Autenticación Correcta</Heading>
             </Card>
-            <Button onClick={signOut}>Sign Out</Button>
+            <Button onClick={signOut}>Salir</Button>
           </View>
 
           <div className="">
