@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+
 
 function TopBar() {
+
   const styles = {
     display: 'flex',
     alignItems: 'center',
@@ -8,6 +10,32 @@ function TopBar() {
     backgroundColor: '#333',
     color: '#fff',
     padding: '10px',
+
+    hamburger:{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-around',
+      width: '30px',
+      height: '30px',
+      background: 'transparent',
+      border: 'none',
+      cursor: 'pointer',
+      padding: 0,
+      boxSizing: 'border-box',
+      transition: 'all 0.3s ease-in-out',
+      position: 'absolute',
+      top: '15px',
+      right: '15px',
+      zIndex: 10,
+    },
+    bar:{
+      width: '100%',
+      height: '2px',
+      background: '#fff',
+      borderRadius: '10px',
+      transition: 'all 0.3s ease-in-out',
+      transformOrigin: '1px',
+    },
   };
 
   const linkStyles = {
@@ -25,6 +53,12 @@ function TopBar() {
     <div style={styles}>
       <h1 style={{ fontSize: '1.5rem', margin: 0 }}> IMPRESORAS SHARP GO</h1>
       <nav>
+       {/*  <button style={styles.hamburger} onClick={handleToggleMenu} >
+          <span style={styles.bar} ></span>
+          <span style={styles.bar} ></span>
+          <span style={styles.bar} ></span>
+        </button> */}
+     
         <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex' }}>
           <NavItem path="/" text="Inicio" styles={linkStyles} activeStyles={activeLinkStyles} />
           <NavItem path="/about" text="Crear" styles={linkStyles} activeStyles={activeLinkStyles} />
@@ -48,4 +82,8 @@ function NavItem(props) {
   );
 }
 
+
+
 export default TopBar;
+
+
